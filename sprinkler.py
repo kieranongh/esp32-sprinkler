@@ -1,7 +1,7 @@
 from machine import Pin
 import time
 
-ledPin = Pin(18, Pin.OUT)
+ledPin = Pin(2, Pin.OUT)
 
 class Sprinkler:
   def loop(self):
