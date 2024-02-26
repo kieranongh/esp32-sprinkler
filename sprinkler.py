@@ -7,4 +7,6 @@ class Sprinkler:
   def loop(self):
     while True:
       ledPin.value(not ledPin.value())
+      print(f'ledPin.value() => {ledPin.value()}', end='\r')
       time.sleep(0.1)
+
