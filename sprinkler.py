@@ -5,7 +5,7 @@ ledPin = Pin(2, Pin.OUT)
 
 class Sprinkler:
   def loop(self):
-    while True:
+    for i in range(50):
       ledPin.value(not ledPin.value())
       print(f'ledPin.value() => {ledPin.value()}', end='\r')
       time.sleep(0.1)
