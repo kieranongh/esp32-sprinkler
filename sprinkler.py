@@ -8,18 +8,24 @@ relayPins = [
 ]
 
 def interrupter(pin):
-  relayPins[0].value(not relayPins[0].value)
+  relayPins[0].value(not relayPins[0].value())
+  print(f'relayPins[0].value() => {relayPins[0].value()}')
 
 class Sprinkler:
   def run(self):
     print(f'Run')
     buttonPin.irq(trigger=Pin.IRQ_FALLING, handler=interrupter)
-    for i in range(50):
-      ledPin.value(not ledPin.value())
-      print(f'ledPin.value() => {ledPin.value()}', end='\r')
-      if i%2 == 0:
-        time.sleep(0.1)
-      else:
-        time.sleep(0.4)
+
+    while True:
+      # Waiting for interrupt
+      time.sleep(1)
+      pass
+    # for i in range(50):
+    #   ledPin.value(not ledPin.value())
+    #   print(f'ledPin.value() => {ledPin.value()}', end='\r')
+    #   if i%2 == 0:
+    #     time.sleep(0.1)
+    #   else:
+    #     time.sleep(0.4)
 
 
